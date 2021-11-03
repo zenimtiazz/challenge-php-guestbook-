@@ -7,12 +7,14 @@ class Post{
     private  $title;
    private  $content;
     private  $author;
+    private $date;
 
 
-    public function __construct($title,$content,$author){
+    public function __construct($title,$content,$author,$date){
     $this->title = $title;
     $this->content=$content;
     $this->author=$author;
+    $this->date=$date;
    
 
     }
@@ -31,7 +33,10 @@ class Post{
     {
         return $this->author;
     }
-
+    public function getDate()
+    {
+        return $this->date;
+    }
    
   
 }

@@ -6,13 +6,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     //Make sure the script can handle site defacement attacks: use htmlspecialchars()
     $title = trim(htmlspecialchars($_POST['title']));
+    
     $content = trim(htmlspecialchars($_POST['content']));
     $author = trim(htmlspecialchars($_POST['author']));
+    $date = trim(htmlspecialchars($_POST['date']));
     //trim removes spaces left and right
 
     $loader = new PostLoader();
     //instantiated PostLoader and have access to properties of the class PostLoader
-    $loader->addPost($title, $content, $author);
+    $loader->addPost($title, $content, $author, $date);
     $loader->savePost();
 
     $posts = $loader->getPosts();
@@ -54,6 +56,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <label for="author">Message:
         <input type="text" name="content" id="content">
     </label>
+    <label for="date">Date:
+        <input type="text" name="date" id="date">
+    </label>
     <br>
     <br>
     <button type="submit" >Submit</button>
@@ -75,6 +80,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <p><?php echo $post->getTitle()?></p>
                 <p><?php echo $post->getContent()?></p>
                 <p><?php echo $post->getAuthor()?></p>
+                <p><?php echo $post->getDate()?></p>
+
 
             </div>
             <?php
