@@ -5,15 +5,14 @@ declare(strict_types=1);
 class Post{
 
     private  $title;
-  
-    private  $content;
+   private  $content;
     private  $author;
 
 
-    public function __construct($title,$date,$content){
+    public function __construct($title,$content,$author){
     $this->title = $title;
-    $this->date =$date;
     $this->content=$content;
+    $this->author=$author;
    
 
     }
@@ -23,16 +22,10 @@ class Post{
         return $this->title;
     }
 
-   
-  
-   
-
     public function getContent()
     {
         return $this->content;
     }
-
- 
 
     public function getAuthor()
     {
