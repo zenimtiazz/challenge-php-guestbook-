@@ -3,7 +3,7 @@
 class PostLoader {
     private $posts = [];
     //private $contents = 'database.txt';
-    const DB_FILE = 'database.txt';
+    const message = 'database.txt';
 
     public function addPost($title, $content, $author, $date){
         $newPost = new Post($title, $content, $author, $date);
@@ -18,7 +18,7 @@ class PostLoader {
         
         //file_put_contents('database.txt', $encodedPosts);
         //$contents = file_get_contents('database.txt', $encodedPosts);
-        file_put_contents(self::DB_FILE, $encodedPosts);
+        file_put_contents(self::message, $encodedPosts);
     }
 
     public function getPosts(){
@@ -27,7 +27,7 @@ class PostLoader {
 
     public function __construct() {
         //$contents = file_get_contents('database.txt');
-        $contents = file_get_contents(self::DB_FILE);
+        $contents = file_get_contents(self::message);
 
 
         if (!empty($contents)){
