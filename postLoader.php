@@ -5,8 +5,8 @@ class PostLoader {
     //private $contents = 'database.txt';
     const DB_FILE = 'database.txt';
 
-    public function addPost($title, $content, $author){
-        $newPost = new Post($title, $content, $author);
+    public function addPost($title, $content, $author, $date){
+        $newPost = new Post($title, $content, $author, $date);
         array_push($this->posts, $newPost);
        
     }
