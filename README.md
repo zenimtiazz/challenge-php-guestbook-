@@ -30,4 +30,4 @@ To keep a good overview of the code we recommend separating the view (html code)
 ## Nice to have features  ❌
 - Profanity filter: at the top of your script create an array of "bad" words. If somebody tries to enter a message with those words, their messages gets rejected. ❌
 
-- When the user enters uses a "smily" like ":-)", ";-)", ":-(" replace it with an image of such a smily.❌
+- When the user enters uses a "smily" like ":-)", ";-)", ":-(" replace it with an image of such a smily.✔️ 11:27 it just worked
