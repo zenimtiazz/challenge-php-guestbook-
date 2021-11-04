@@ -2,8 +2,8 @@
 
 class PostLoader {
     private $posts = [];
-    //private $contents = 'database.txt';
-    const message = 'database.txt';
+    
+    const message = 'message.json';
 
     public function addPost($title, $content, $author, $date){
         $newPost = new Post($title, $content, $author, $date);

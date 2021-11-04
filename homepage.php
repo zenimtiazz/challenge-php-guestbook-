@@ -1,5 +1,5 @@
 <?php
-
+require 'emojis.php';
 //instead of isset:
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     //if above is true then way we have access to form input
@@ -24,6 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     //Only show the latest 20 posts.
     $posts = array_slice($posts, 0, 20);
+  
     //makes new array
 
     //echo 'length of the array: ' .count($posts);
@@ -78,7 +79,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="single-post">
 
                 <p><?php echo $post->getTitle()?></p>
-                <p><?php echo $post->getContent()?></p>
+                <p><?php 
+                $postarr = explode(" ", $post->getContent());
+                $str = "";
+                foreach($postarr as $posta){
+                $str .= Emojis::stringToEmoji($posta);
+                }
+                echo $str;
+                
+                
+                ?> </p>
+            
+
+
                 <p><?php echo $post->getAuthor()?></p>
                 <p><?php echo $post->getDate()?></p>
 
